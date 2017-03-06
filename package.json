@@ -1,0 +1,20 @@
+{
+  "name": "jitsi-meet-api",
+  "version": "0.0.0",
+  "description": "Easy to use wrapper for the Jitsi Meet iframe API.",
+  "main": "index.js",
+  "scripts": {
+    "build-dev": "browserify index.js -t [ babelify --presets es2015 ] > dist/jitsi-meet.js",
+    "build-prod": "browserify index.js -t [ babelify --presets es2015 ] | uglifyjs --screw-ie8 -c=dead_code,evaluate,loops,unused > dist/jitsi-meet.min.js",
+    "build": "npm run build-dev && npm run build-prod"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.1.0",
+    "load-script2": "^1.0.0",
+    "uglify-js": "^2.8.4"
+  }
+}
